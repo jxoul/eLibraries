@@ -1,0 +1,92 @@
+<form
+  id="search-book-form"
+  name="search-book-form"
+  onsubmit="studentBookSearch();return false;"
+>
+  <!-- Title -->
+  <div class="form-group">
+    <label for="search-book-title">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search-book-title"
+      name="title"
+    />
+  </div>
+
+  <!-- Authors -->
+  <div class="form-group">
+    <label for="search-book-authors">Authors</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search-book-authors"
+      name="authors"
+    />
+  </div>
+
+  <!-- Genre -->
+  <div class="form-group">
+    <label for="search-book-genre">Genre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search-book-genre"
+      name="genre"
+    />
+  </div>
+
+  <!-- From Pages -->
+  <div class="form-group">
+    <label for="search-book-fpages">Pages (From)</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search-book-fpages"
+      name="fpages"
+    />
+  </div>
+
+  <!-- To Pages -->
+  <div class="form-group">
+    <label for="search-book-tpages">Pages (To)</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search-book-tpages"
+      name="tpages"
+    />
+  </div>
+
+  <!-- From Publication Year -->
+  <div class="form-group">
+    <label for="search-book-fyear">Publication Year (From)</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search-book-fyear"
+      name="fyear"
+    />
+  </div>
+
+  <!-- To Publication Year -->
+  <div class="form-group">
+    <label for="search-book-tyear">Publication Year (To)</label>
+    <input
+      type="text"
+      class="form-control"
+      id="search-book-tyear"
+      name="tyear"
+    />
+  </div>
+
+  <div class="text-center">
+    <button id="search-book-btn" type="submit" class="btn btn-primary">
+      Search Book
+    </button>
+  </div>
+</form>
+
+<p id="search-book-result" class="text-center my-2"></p>
+
+<div id="available-libraries-div"></div>

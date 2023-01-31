@@ -1,0 +1,754 @@
+<!--  Cancel Button  -->
+<div class="text-center" style="padding-bottom: 20px">
+  <div class="btn btn-danger btn-circle" onclick="loadIndexPage(true)">
+    <i class="fa fa-times"></i>
+  </div>
+</div>
+
+<!--  Registration Form  -->
+<form
+  id="registration-form"
+  name="registration-form"
+  onsubmit="RegisterPOST();return false;"
+>
+  <!--  Required Text  -->
+  <p class="text-center">
+    <strong>The (*) fields are required</strong>
+  </p>
+
+  <!-- User Type -->
+  <div class="form-group special-section">
+    <label for="user-type">User Type</label>
+    <select class="form-control" id="user-type" name="user_type">
+      <option value="student" selected>Student</option>
+      <option value="librarian">Librarian</option>
+    </select>
+  </div>
+
+  <!-- Username -->
+  <div class="form-group">
+    <label for="username">(*) Username</label>
+    <span class="input-help" id="username-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="username-help-info"
+      >Username must be at least 8 letters and must include only lower case and
+      upper case latin characters</span
+    >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+        aria-labelledby="username-help-info"
+        placeholder="greakfreak"
+      />
+    </div>
+    <small id="username-msg" class="form-text"></small>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group">
+    <label for="email">(*) Email</label>
+    <span class="input-help" id="email-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="email-help-info"
+      >Email must be valid</span
+    >
+    <div class="input-group">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        aria-labelledby="email-help-info"
+        placeholder="giannis_ante34@csd.uoc.gr"
+      />
+    </div>
+    <small id="email-msg" class="form-text"></small>
+  </div>
+
+  <!-- Password -->
+  <div class="form-group">
+    <label for="password">(*) Password</label>
+    <span class="input-help" id="password-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="password-help-info"
+      >Password must include at least one latin character, at least one number
+      and at least one special character (~ ! ? @ # $ % ^ & * + -)</span
+    >
+    <div class="input-group password-div">
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        aria-labelledby="password-help-info"
+      />
+      <div class="password-toogle-btn" id="password-btn">
+        <i class="fas fa-eye"></i>
+      </div>
+    </div>
+    <label for="confirmPassword" style="margin-top: 15px"
+      >(*) Confirm Password</label
+    >
+    <span class="input-help" id="confirmPassword-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="confirmPassword-help-info"
+      >Passwords must be the same</span
+    >
+    <div class="input-group password-div">
+      <input
+        type="password"
+        class="form-control"
+        id="confirmPassword"
+        name="confirmPassword"
+        aria-labelledby="confirmPassword-help-info"
+      />
+      <div class="password-toogle-btn" id="confirmPassword-btn">
+        <i class="fas fa-eye"></i>
+      </div>
+    </div>
+    <small id="password-msg" class="form-text"></small>
+  </div>
+
+  <!-- First Name -->
+  <div class="form-group">
+    <label for="fname">(*) First Name</label>
+    <span class="input-help" id="fname-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="fname-help-info"
+      >First name should be from 3 to 30 Latin characters</span
+    >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="fname"
+        name="firstname"
+        aria-labelledby="fname-help-info"
+        placeholder="Giannis"
+      />
+    </div>
+    <small id="fname-msg" class="form-text"></small>
+  </div>
+
+  <!-- Last Name -->
+  <div class="form-group">
+    <label for="lname">(*) Last Name</label>
+    <span class="input-help" id="lname-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="lname-help-info"
+      >Last name should be from 3 to 30 Latin characters</span
+    >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="lname"
+        name="lastname"
+        aria-labelledby="lname-help-info"
+        placeholder="Antetokounmpo"
+      />
+    </div>
+    <small id="lname-msg" class="form-text"></small>
+  </div>
+
+  <!-- Gender -->
+  <div class="form-group">
+    <label>(*) Gender</label>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="gender"
+        id="male-radio"
+        value="male"
+      />
+      <label class="form-check-label" for="male-radio"> Male </label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="gender"
+        id="female-radio"
+        value="female"
+      />
+      <label class="form-check-label" for="female-radio"> Female </label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="gender"
+        id="other-radio"
+        value="other"
+      />
+      <label class="form-check-label" for="other-radio"> Other </label>
+    </div>
+    <small id="gender-msg" class="form-text"></small>
+  </div>
+
+  <!-- Birthday -->
+  <div class="form-group">
+    <label for="bday">Date of Birth</label>
+    <div class="input-group">
+      <input
+        type="date"
+        class="form-control"
+        id="bday"
+        name="birthdate"
+        value="1980-01-01"
+        min="1920-01-01"
+        max="2006-12-31"
+      />
+    </div>
+  </div>
+
+  <!-- Phone Number -->
+  <div class="form-group">
+    <label for="phone">Telephone</label>
+    <span class="input-help" id="phone-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="phone-help-info"
+      >Telephone must be exactly 10 digits</span
+    >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        name="telephone"
+        aria-labelledby="phone-help-info"
+        placeholder="6912345678"
+      />
+    </div>
+    <small id="phone-msg" class="form-text"></small>
+  </div>
+
+  <!-- Personal Website -->
+  <div class="form-group">
+    <label for="page">Personal Webpage</label>
+    <span class="input-help" id="page-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="page-help-info"
+      >A valid URL begins with https://</span
+    >
+    <div class="input-group">
+      <input
+        type="url"
+        class="form-control"
+        id="page"
+        name="personalpage"
+        aria-labelledby="page-help-info"
+        placeholder="https://www.giannisante34.com"
+      />
+    </div>
+  </div>
+
+  <!-- Country -->
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select class="form-control" id="country" name="country">
+      <option>select country</option>
+      <option value="AF">Afghanistan</option>
+      <option value="AX">Aland Islands</option>
+      <option value="AL">Albania</option>
+      <option value="DZ">Algeria</option>
+      <option value="AS">American Samoa</option>
+      <option value="AD">Andorra</option>
+      <option value="AO">Angola</option>
+      <option value="AI">Anguilla</option>
+      <option value="AQ">Antarctica</option>
+      <option value="AG">Antigua and Barbuda</option>
+      <option value="AR">Argentina</option>
+      <option value="AM">Armenia</option>
+      <option value="AW">Aruba</option>
+      <option value="AU">Australia</option>
+      <option value="AT">Austria</option>
+      <option value="AZ">Azerbaijan</option>
+      <option value="BS">Bahamas</option>
+      <option value="BH">Bahrain</option>
+      <option value="BD">Bangladesh</option>
+      <option value="BB">Barbados</option>
+      <option value="BY">Belarus</option>
+      <option value="BE">Belgium</option>
+      <option value="BZ">Belize</option>
+      <option value="BJ">Benin</option>
+      <option value="BM">Bermuda</option>
+      <option value="BT">Bhutan</option>
+      <option value="BO">Bolivia</option>
+      <option value="BQ">Bonaire</option>
+      <option value="BA">Bosnia and Herzegovina</option>
+      <option value="BW">Botswana</option>
+      <option value="BV">Bouvet Island</option>
+      <option value="BR">Brazil</option>
+      <option value="IO">British Indian Ocean Territory</option>
+      <option value="BN">Brunei Darussalam</option>
+      <option value="BG">Bulgaria</option>
+      <option value="BF">Burkina Faso</option>
+      <option value="BI">Burundi</option>
+      <option value="KH">Cambodia</option>
+      <option value="CM">Cameroon</option>
+      <option value="CA">Canada</option>
+      <option value="CV">Cape Verde</option>
+      <option value="KY">Cayman Islands</option>
+      <option value="CF">Central African Republic</option>
+      <option value="TD">Chad</option>
+      <option value="CL">Chile</option>
+      <option value="CN">China</option>
+      <option value="CX">Christmas Island</option>
+      <option value="CC">Cocos Islands</option>
+      <option value="CO">Colombia</option>
+      <option value="KM">Comoros</option>
+      <option value="CG">Congo</option>
+      <option value="CD">Congo</option>
+      <option value="CK">Cook Islands</option>
+      <option value="CR">Costa Rica</option>
+      <option value="CI">Cote D'Ivoire</option>
+      <option value="HR">Croatia</option>
+      <option value="CU">Cuba</option>
+      <option value="CW">Curacao</option>
+      <option value="CY">Cyprus</option>
+      <option value="CZ">Czech Republic</option>
+      <option value="DK">Denmark</option>
+      <option value="DJ">Djibouti</option>
+      <option value="DM">Dominica</option>
+      <option value="DO">Dominican Republic</option>
+      <option value="EC">Ecuador</option>
+      <option value="EG">Egypt</option>
+      <option value="SV">El Salvador</option>
+      <option value="GQ">Equatorial Guinea</option>
+      <option value="ER">Eritrea</option>
+      <option value="EE">Estonia</option>
+      <option value="ET">Ethiopia</option>
+      <option value="FK">Falkland Islands</option>
+      <option value="FO">Faroe Islands</option>
+      <option value="FJ">Fiji</option>
+      <option value="FI">Finland</option>
+      <option value="FR">France</option>
+      <option value="GF">French Guiana</option>
+      <option value="PF">French Polynesia</option>
+      <option value="TF">French Southern Territories</option>
+      <option value="GA">Gabon</option>
+      <option value="GM">Gambia</option>
+      <option value="GE">Georgia</option>
+      <option value="DE">Germany</option>
+      <option value="GH">Ghana</option>
+      <option value="GI">Gibraltar</option>
+      <option value="GR" selected>Greece</option>
+      <option value="GL">Greenland</option>
+      <option value="GD">Grenada</option>
+      <option value="GP">Guadeloupe</option>
+      <option value="GU">Guam</option>
+      <option value="GT">Guatemala</option>
+      <option value="GG">Guernsey</option>
+      <option value="GN">Guinea</option>
+      <option value="GW">Guinea-Bissau</option>
+      <option value="GY">Guyana</option>
+      <option value="HT">Haiti</option>
+      <option value="HM">Heard Mcdonald Islands</option>
+      <option value="VA">Holy See</option>
+      <option value="HN">Honduras</option>
+      <option value="HK">Hong Kong</option>
+      <option value="HU">Hungary</option>
+      <option value="IS">Iceland</option>
+      <option value="IN">India</option>
+      <option value="ID">Indonesia</option>
+      <option value="IR">Iran</option>
+      <option value="IQ">Iraq</option>
+      <option value="IE">Ireland</option>
+      <option value="IM">Isle of Man</option>
+      <option value="IL">Israel</option>
+      <option value="IT">Italy</option>
+      <option value="JM">Jamaica</option>
+      <option value="JP">Japan</option>
+      <option value="JE">Jersey</option>
+      <option value="JO">Jordan</option>
+      <option value="KZ">Kazakhstan</option>
+      <option value="KE">Kenya</option>
+      <option value="KI">Kiribati</option>
+      <option value="KP">Korea</option>
+      <option value="XK">Kosovo</option>
+      <option value="KW">Kuwait</option>
+      <option value="KG">Kyrgyzstan</option>
+      <option value="LA">Laos</option>
+      <option value="LV">Latvia</option>
+      <option value="LB">Lebanon</option>
+      <option value="LS">Lesotho</option>
+      <option value="LR">Liberia</option>
+      <option value="LY">Libyan Arab Jamahiriya</option>
+      <option value="LI">Liechtenstein</option>
+      <option value="LT">Lithuania</option>
+      <option value="LU">Luxembourg</option>
+      <option value="MO">Macao</option>
+      <option value="MG">Madagascar</option>
+      <option value="MW">Malawi</option>
+      <option value="MY">Malaysia</option>
+      <option value="MV">Maldives</option>
+      <option value="ML">Mali</option>
+      <option value="MT">Malta</option>
+      <option value="MH">Marshall Islands</option>
+      <option value="MQ">Martinique</option>
+      <option value="MR">Mauritania</option>
+      <option value="MU">Mauritius</option>
+      <option value="YT">Mayotte</option>
+      <option value="MX">Mexico</option>
+      <option value="FM">Micronesia</option>
+      <option value="MD">Moldova</option>
+      <option value="MC">Monaco</option>
+      <option value="MN">Mongolia</option>
+      <option value="ME">Montenegro</option>
+      <option value="MS">Montserrat</option>
+      <option value="MA">Morocco</option>
+      <option value="MZ">Mozambique</option>
+      <option value="MM">Myanmar</option>
+      <option value="NA">Namibia</option>
+      <option value="NR">Nauru</option>
+      <option value="NP">Nepal</option>
+      <option value="NL">Netherlands</option>
+      <option value="AN">Netherlands Antilles</option>
+      <option value="NC">New Caledonia</option>
+      <option value="NZ">New Zealand</option>
+      <option value="NI">Nicaragua</option>
+      <option value="NE">Niger</option>
+      <option value="NG">Nigeria</option>
+      <option value="NU">Niue</option>
+      <option value="NF">Norfolk Island</option>
+      <option value="NM">North Macedonia</option>
+      <option value="MP">Northern Mariana Islands</option>
+      <option value="NO">Norway</option>
+      <option value="OM">Oman</option>
+      <option value="PK">Pakistan</option>
+      <option value="PW">Palau</option>
+      <option value="PS">Palestinian Territory</option>
+      <option value="PA">Panama</option>
+      <option value="PG">Papua New Guinea</option>
+      <option value="PY">Paraguay</option>
+      <option value="PE">Peru</option>
+      <option value="PH">Philippines</option>
+      <option value="PN">Pitcairn</option>
+      <option value="PL">Poland</option>
+      <option value="PT">Portugal</option>
+      <option value="PR">Puerto Rico</option>
+      <option value="QA">Qatar</option>
+      <option value="RE">Reunion</option>
+      <option value="RO">Romania</option>
+      <option value="RU">Russian Federation</option>
+      <option value="RW">Rwanda</option>
+      <option value="BL">Saint Barthelemy</option>
+      <option value="SH">Saint Helena</option>
+      <option value="KN">Saint Kitts and Nevis</option>
+      <option value="LC">Saint Lucia</option>
+      <option value="MF">Saint Martin</option>
+      <option value="PM">Saint Pierre</option>
+      <option value="VC">Saint Vincent</option>
+      <option value="WS">Samoa</option>
+      <option value="SM">San Marino</option>
+      <option value="ST">Sao Tome and Principe</option>
+      <option value="SA">Saudi Arabia</option>
+      <option value="SN">Senegal</option>
+      <option value="RS">Serbia</option>
+      <option value="CS">Serbia and Montenegro</option>
+      <option value="SC">Seychelles</option>
+      <option value="SL">Sierra Leone</option>
+      <option value="SG">Singapore</option>
+      <option value="SX">Sint Maarten</option>
+      <option value="SK">Slovakia</option>
+      <option value="SI">Slovenia</option>
+      <option value="SB">Solomon Islands</option>
+      <option value="SO">Somalia</option>
+      <option value="ZA">South Africa</option>
+      <option value="GS">South Georgia</option>
+      <option value="SS">South Sudan</option>
+      <option value="ES">Spain</option>
+      <option value="LK">Sri Lanka</option>
+      <option value="SD">Sudan</option>
+      <option value="SR">Suriname</option>
+      <option value="SJ">Svalbard</option>
+      <option value="SZ">Swaziland</option>
+      <option value="SE">Sweden</option>
+      <option value="CH">Switzerland</option>
+      <option value="SY">Syrian Arab Republic</option>
+      <option value="TW">Taiwan</option>
+      <option value="TJ">Tajikistan</option>
+      <option value="TZ">Tanzania</option>
+      <option value="TH">Thailand</option>
+      <option value="TL">Timor-Leste</option>
+      <option value="TG">Togo</option>
+      <option value="TK">Tokelau</option>
+      <option value="TO">Tonga</option>
+      <option value="TT">Trinidad and Tobago</option>
+      <option value="TN">Tunisia</option>
+      <option value="TR">Turkey</option>
+      <option value="TM">Turkmenistan</option>
+      <option value="TC">Turks and Caicos Islands</option>
+      <option value="TV">Tuvalu</option>
+      <option value="UG">Uganda</option>
+      <option value="UA">Ukraine</option>
+      <option value="AE">United Arab Emirates</option>
+      <option value="GB">United Kingdom</option>
+      <option value="US">United States</option>
+      <option value="UM">United States Islands</option>
+      <option value="UY">Uruguay</option>
+      <option value="UZ">Uzbekistan</option>
+      <option value="VU">Vanuatu</option>
+      <option value="VE">Venezuela</option>
+      <option value="VN">Viet Nam</option>
+      <option value="VG">Virgin Islands, British</option>
+      <option value="VI">Virgin Islands, U.s.</option>
+      <option value="WF">Wallis and Futuna</option>
+      <option value="EH">Western Sahara</option>
+      <option value="YE">Yemen</option>
+      <option value="ZM">Zambia</option>
+      <option value="ZW">Zimbabwe</option>
+    </select>
+  </div>
+
+  <!-- City -->
+  <div class="form-group">
+    <label for="city">City</label>
+    <span class="input-help" id="city-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="city-help-info"
+      >City must be between 3 and 50 latin characters and include only lower/
+      upper case latin characters</span
+    >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="city"
+        name="city"
+        aria-labelledby="city-help-city"
+        placeholder="Heraklion"
+      />
+    </div>
+    <small id="city-msg" class="form-text"></small>
+  </div>
+
+  <!-- Address -->
+  <div class="form-group">
+    <label for="address">Home Address</label>
+    <span class="input-help" id="address-help"
+      ><i class="fas fa-info-circle"></i
+    ></span>
+    <br />
+    <span class="input-help-info" id="address-help-info"
+      >Address must be between 3 and 50 latin characters and must be a
+      compination of upper case/ lower case characters, numbers, the . , - signs
+      and spaces</span
+    >
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        id="address"
+        name="address"
+        aria-labelledby="address-help-city"
+        placeholder="Μονής Καρδιωτίσσης 57"
+      />
+    </div>
+    <small id="address-msg" class="form-text"></small>
+  </div>
+
+  <!-- Validate Button -->
+  <div class="form-group text-center">
+    <div id="validate-btn" class="btn btn-primary">Validate Location</div>
+    <div id="validate-info"></div>
+    <div id="validate-warning"></div>
+    <div id="map-btn" class="btn btn-light" style="margin-top: 15px" hidden>
+      Show Map
+    </div>
+
+    <div id="map-div" hidden>
+      <div id="map"></div>
+      <div id="divID"></div>
+    </div>
+    <input type="hidden" value="0" id="lat" name="lat" />
+    <input type="hidden" value="0" id="lon" name="lon" />
+  </div>
+
+  <!-- Special Section -->
+  <div class="special-section">
+    <p class="text-center">
+      <strong id="special-section-title"></strong>
+    </p>
+
+    <!-- Student Type -->
+    <div class="form-group student-div">
+      <label for="student-type">(*) Student Type</label>
+      <select class="form-control" id="student-type" name="student_type">
+        <option value="BSc" selected>Undergraduate</option>
+        <option value="MSc">Postgraduate</option>
+        <option value="PhD">Ph.D</option>
+      </select>
+    </div>
+
+    <!-- Student Id -->
+    <div class="form-group student-div">
+      <label for="student_id">(*) Student ID</label>
+      <span class="input-help" id="student_id-help"
+        ><i class="fas fa-info-circle"></i
+      ></span>
+      <br />
+      <span class="input-help-info" id="student_id-help-info"
+        >ID must be a 12-digit number</span
+      >
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control student-input"
+          id="student_id"
+          name="student_id"
+          aria-labelledby="student_id-help-info"
+          placeholder="221019963410"
+        />
+      </div>
+      <small id="student_id-msg" class="form-text"></small>
+    </div>
+
+    <!-- Student Id Dates -->
+    <div class="form-group student-div">
+      <label for="id-sday">(*) Student Id Starting Date</label>
+      <span class="input-help" id="id-sday-help"
+        ><i class="fas fa-info-circle"></i
+      ></span>
+      <br />
+      <span class="input-help-info" id="id-sday-help-info"
+        >Starting date cant be after ending date</span
+      >
+      <div class="input-group">
+        <input
+          type="date"
+          class="form-control"
+          id="id-sday"
+          name="student_id_from_date"
+          value="2016-01-01"
+          min="2016-01-01"
+        />
+      </div>
+      <label for="id-eday" style="margin-top: 15px"
+        >(*) Student Id Ending Date</label
+      >
+      <span class="input-help" id="id-eday-help"
+        ><i class="fas fa-info-circle"></i
+      ></span>
+      <br />
+      <span class="input-help-info" id="id-eday-help-info"
+        >The expiration date is:<br />Undergraduate &#8594; 6 years<br />Postgraduate
+        &#8594; 2 years<br />PhD &#8594; 5 years</span
+      >
+      <div class="input-group">
+        <input
+          type="date"
+          class="form-control"
+          id="id-eday"
+          name="student_id_to_date"
+          value="2022-01-01"
+          min="2018-01-01"
+        />
+      </div>
+      <small id="id-date-msg" class="form-text"></small>
+    </div>
+
+    <!-- University in Crete -->
+    <div class="form-group student-div">
+      <label for="uni">(*) University in Crete</label>
+      <select class="form-control" id="uni" name="university">
+        <option value="UOC" selected>UOC</option>
+        <option value="HELMEPA">HELMEPA</option>
+        <option value="TUC">TUC</option>
+      </select>
+    </div>
+
+    <!-- Department-->
+    <div class="form-group student-div">
+      <label for="dep">(*) Department</label>
+      <span class="input-help" id="dep-help"
+        ><i class="fas fa-info-circle"></i
+      ></span>
+      <br />
+      <span class="input-help-info" id="dep-help-info"
+        >Department must be between 3 and 50 latin characters and must include
+        only lower/ upper case latin characters and spaces</span
+      >
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control student-input"
+          id="dep"
+          name="department"
+          aria-labelledby="dep-help-info"
+          placeholder="Computer Science"
+        />
+      </div>
+      <small id="dep-msg" class="form-text"></small>
+    </div>
+
+    <!-- Library Name -->
+    <div class="form-group librarian-div">
+      <label for="lib-name">(*) Library Name</label>
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control librarian-input"
+          id="lib-name"
+          name="libraryname"
+        />
+      </div>
+      <small id="libname-msg" class="form-text"></small>
+    </div>
+
+    <!-- Library Info -->
+    <div class="form-group librarian-div">
+      <label for="lib-info">(*) Info & Schedule</label>
+      <div class="input-group">
+        <textarea
+          id="lib-info"
+          class="form-control librarian-input"
+          name="libraryinfo"
+          rows="4"
+          cols="20"
+        ></textarea>
+      </div>
+      <small id="libinfo-msg" class="form-text"></small>
+    </div>
+  </div>
+
+  <!-- Terms -->
+  <div class="form-group">
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="terms" />
+      <label class="form-check-label" for="terms"
+        >Agree to terms and conditions</label
+      >
+    </div>
+    <small id="terms-msg" class="form-text"></small>
+  </div>
+
+  <div class="text-center">
+    <button id="register-btn" type="submit" class="btn btn-primary">
+      Register
+    </button>
+  </div>
+</form>

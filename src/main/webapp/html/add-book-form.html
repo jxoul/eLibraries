@@ -1,0 +1,103 @@
+<form
+  id="add-book-form"
+  name="add-book-form"
+  onsubmit="addBookToDatabase();return false;"
+>
+  <!-- ISBN -->
+  <div class="form-group">
+    <label for="book-isbn">ISBN</label>
+    <input
+      type="text"
+      class="form-control"
+      id="book-isbn"
+      name="isbn"
+      required
+    />
+  </div>
+
+  <!-- Title -->
+  <div class="form-group">
+    <label for="book-title">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="book-title"
+      name="title"
+      required
+    />
+  </div>
+
+  <!-- Authors -->
+  <div class="form-group">
+    <label for="book-authors">Authors</label>
+    <input
+      type="text"
+      class="form-control"
+      id="book-authors"
+      name="authors"
+      required
+    />
+  </div>
+
+  <!-- Genre -->
+  <div class="form-group">
+    <label for="book-genre">Genre</label>
+    <input
+      type="text"
+      class="form-control"
+      id="book-genre"
+      name="genre"
+      required
+    />
+  </div>
+
+  <!-- Pages -->
+  <div class="form-group">
+    <label for="book-pages">Pages</label>
+    <input
+      type="text"
+      class="form-control"
+      id="book-pages"
+      name="pages"
+      required
+    />
+  </div>
+
+  <!-- Publication Year -->
+  <div class="form-group">
+    <label for="book-year">Publication Year</label>
+    <input
+      type="text"
+      class="form-control"
+      id="book-year"
+      name="publicationyear"
+      required
+    />
+  </div>
+
+  <!-- URL -->
+  <div class="form-group">
+    <label for="book-url">URL</label>
+    <input type="text" class="form-control" id="book-url" name="url" required />
+  </div>
+
+  <!-- Photo -->
+  <div class="form-group">
+    <label for="book-photo">Photo</label>
+    <input
+      type="text"
+      class="form-control"
+      id="book-photo"
+      name="photo"
+      required
+    />
+  </div>
+
+  <div class="text-center">
+    <button id="add-book-btn" type="submit" class="btn btn-primary">
+      Add Book
+    </button>
+  </div>
+</form>
+
+<p id="add-book-result" class="text-center my-2"></p>

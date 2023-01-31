@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>e-Libraries</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="description"
+      content="The aim of the information system is to enable for students to be able to borrow books from libraries located in Crete."
+    />
+    <meta
+      name="keywords"
+      lang="en-us"
+      content="web programming, web application, information system, client, server, html javascript, ajax, servlets, java, css, rest apis, jsp"
+    />
+    <meta name="author" content="Giannis Xoulidis, Stavros Karachristianidis" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="http://www.openlayers.org/api/OpenLayers.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/7de498bafa.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="css/administrator-stats.css" />
+
+    <script src="js/charts.js" defer></script>
+    <script src="js/utilities.js" defer></script>
+    <script src="js/form.js" defer></script>
+    <script src="js/ajax.js" defer></script>
+    <script src="js/student.js" defer></script>
+    <script src="js/librarian.js" defer></script>
+    <script src="js/administrator.js" defer></script>
+    <script src="js/visitor.js" defer></script>
+    <script src="js/map.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center"></h1>
+    </header>
+
+    <!-- Sign Up & Login Buttons -->
+    <div id="index" class="container" hidden>
+      <div class="row" style="padding-top: 20px">
+        <!-- Login -->
+        <div class="col-6 text-center">
+          <div id="login-btn" class="btn btn-primary">Login</div>
+        </div>
+
+        <!-- Sign Up -->
+        <div class="col-6 text-center">
+          <div id="sign-up-btn" class="btn btn-primary">Sign up</div>
+        </div>
+
+        <!-- Visitor -->
+        <div class="col-12 text-center">
+          <div
+            id="visitor-btn"
+            class="btn btn-secondary"
+            style="margin-top: 10px"
+          >
+            Continue as Visitor
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content" class="container"></div>
+
+    <footer>
+      <div class="special-section container">
+        <div class="row justify-content-center">
+          <div class="col-6 col-md-3">
+            <h5>Useful Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="https://zephyr.lib.uoc.gr/cgi-bin/zap/zap/start.zap?lang=GR&amp;restart=yes"
+                  target="_blank"
+                  >Ζέφυρος</a
+                >
+              </li>
+              <li>
+                <a href="http://repository.kallipos.gr/" target="_blank"
+                  >Κάλλιπος</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://eskep.ekt.gr/eskep/journal/search"
+                  target="_blank"
+                  >Συλλογικός Κατάλογος Περιοδικών</a
+                >
+              </li>
+              <li>
+                <a href="http://www.heal-link.gr/" target="_blank"
+                  >Σύνδεσμος Ελληνικών Ακαδημαϊκών Βιβλιοθηκών (HEAL-LINK)</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h5>University Institutions of Crete</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="http://www.uoc.gr/" target="_blank">UOC</a>
+              </li>
+              <li><a href="https://www.tuc.gr/" target="_blank">TUC</a></li>
+              <li>
+                <a href="https://helmepa.gr/" target="_blank">HELMEPA</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="text-center">
+        <small id="credits"
+          >Giannis Xoulidis&#8226;Stavros Karachristianidis © All rights
+          reserved.</small
+        >
+      </p>
+    </footer>
+  </body>
+</html>

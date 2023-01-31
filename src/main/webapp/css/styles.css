@@ -1,0 +1,163 @@
+/* 
+    Created on : Dec 15, 2022, 12:58:59 PM
+    Author     : Giannis
+*/
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: gainsboro;
+  color: darkblue;
+}
+
+h1 {
+  color: white;
+  background-color: darkblue;
+  padding: 20px;
+  margin-bottom: 0%;
+}
+
+footer {
+  padding-top: 20px;
+}
+
+header {
+  padding-bottom: 20px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 80%;
+  z-index: 1;
+}
+
+footer li {
+  font-size: 12px;
+  padding-bottom: 10px;
+  list-style-type: square;
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.input-help {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.input-help i {
+  color: darkblue;
+  opacity: 80%;
+}
+.input-help:hover i {
+  color: darkblue;
+  opacity: 40%;
+}
+
+.input-help-info {
+  display: none;
+  color: darkblue;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.special-section {
+  background-color: darkblue;
+  border: 15px solid darkblue;
+  border-radius: 15px;
+}
+
+.special-section .col-sm-2,
+.special-section .col-sm-9,
+.special-section h5,
+.special-section h2,
+.special-section a,
+.special-section label,
+.special-section strong,
+.special-section span,
+.special-section span i,
+.special-section span i:hover {
+  color: white;
+}
+
+.special-section small {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.password-div {
+  position: relative;
+}
+
+.password-toogle-btn {
+  position: absolute;
+  top: 60%;
+  right: 10px;
+  transform: translateY(-60%);
+  color: darkblue;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#special-section-title {
+  font-size: larger;
+}
+
+.green-text {
+  color: green;
+}
+
+.red-text {
+  color: red;
+}
+.user-btn {
+  background-color: darkblue;
+  color: white;
+}
+
+.table {
+  font-size: 1.2rem;
+}
+#map-div {
+  margin: 32px 0px;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+}
+
+td.col-3.big-text {
+  max-width: 300px;
+  width: 300px;
+  overflow-wrap: break-word;
+
+  overflow: hidden;
+}
+
+thead {
+  color: darkblue;
+}
+
+#reviews-scroll-div {
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.blue-border {
+  border: 2px solid darkblue;
+  border-radius: 5px;
+}
+
+.table tbody tr {
+  cursor: pointer;
+}
